@@ -17,7 +17,7 @@
 </foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-color="black" style="color:black;" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-color="black" style="--color:black;color:black;" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;./assets/app-architecture-backend.svg&quot;);background-size:contain;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="3" data-color="black" style="--color:black;color:black;" data-marpit-advanced-background="content"></section>
 </foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-color="black" style="color:black;" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-color="black" style="--color:black;color:black;">
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js">{
-	<span class="hljs-attr">data</span>:<span class="hljs-function">()=></span>({
+	<span class="hljs-attr">data</span>:<span class="hljs-function">()=&gt;</span>({
 	  <span class="hljs-attr">count</span>:<span class="hljs-number">0</span>
 	}),
 	<span class="hljs-attr">methods</span>:{
@@ -25,7 +25,7 @@
 		<span class="hljs-variable language_">this</span>.<span class="hljs-property">count</span> += <span class="hljs-number">1</span>;
 	  }
 	},
-	<span class="hljs-attr">template</span>: <span class="hljs-string">`<VBtn @click=&quot;onClick&quot;>{{ count }}<VBtn>`</span>, 
+	<span class="hljs-attr">template</span>: <span class="hljs-string">`&lt;VBtn @click=&quot;onClick&quot;&gt;{{ count }}&lt;VBtn&gt;`</span>, 
 }
 </code></pre>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js">{
@@ -33,7 +33,7 @@
 	<span class="hljs-attr">methods</span>:{
 	  <span class="hljs-attr">onClick</span>:  <span class="hljs-keyword">new</span> <span class="hljs-title class_">Function</span>(<span class="hljs-string">&#x27;this.count += 1;&#x27;</span>),
 	},
-	<span class="hljs-attr">template</span>: <span class="hljs-string">`<VBtn @click=&quot;onClick&quot;>{{ count }}<VBtn>`</span>, 
+	<span class="hljs-attr">template</span>: <span class="hljs-string">`&lt;VBtn @click=&quot;onClick&quot;&gt;{{ count }}&lt;VBtn&gt;`</span>, 
 }
 </code></pre>
 </section>
@@ -47,7 +47,7 @@
 	<span class="hljs-attr">methods</span>:{
 	  <span class="hljs-attr">onClick</span>:  <span class="hljs-keyword">new</span> <span class="hljs-title class_">Function</span>(<span class="hljs-string">&#x27;this.count += 1;&#x27;</span>),
 	},
-	<span class="hljs-attr">template</span>: <span class="hljs-string">`<VBtn @click=&quot;onClick&quot;>{{ count }}<VBtn>`</span>, 
+	<span class="hljs-attr">template</span>: <span class="hljs-string">`&lt;VBtn @click=&quot;onClick&quot;&gt;{{ count }}&lt;VBtn&gt;`</span>, 
 });
 </code></pre>
 </section>
@@ -61,7 +61,7 @@
 	<span class="hljs-attr">methods</span>: {},
 	<span class="hljs-attr">template</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">tmpl</span>
       }
-	  <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">keys</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">actions</span> || {}).<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">actionName</span>) =></span> {
+	  <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">keys</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">actions</span> || {}).<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">actionName</span>) =&gt;</span> {
 		  <span class="hljs-keyword">const</span> action = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Function</span>([<span class="hljs-string">&#x27;payload&#x27;</span>], <span class="hljs-variable language_">this</span>.<span class="hljs-property">actions</span>[actionName])
 		  ccomponent.<span class="hljs-property">methods</span>[actionName] = action;
 	  });
@@ -74,7 +74,7 @@
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-color="black" style="--color:black;color:black;">
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-json"><span class="hljs-punctuation">{</span>
-  <span class="hljs-attr">&quot;tmpl&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;<VBtn @click=\&quot;onClick\&quot;>\n    {{count}}\n</VBtn>&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;tmpl&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;&lt;VBtn @click=\&quot;onClick\&quot;&gt;\n    {{count}}\n&lt;/VBtn&gt;&quot;</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">&quot;actions&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
     <span class="hljs-attr">&quot;onClick&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;this.count += 1;      &quot;</span>
   <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
@@ -83,12 +83,12 @@
 </code></pre>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-keyword">import</span> <span class="hljs-title class_">Spell</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./spell.js&quot;</span>;
 
-  <span class="language-xml"><span class="hljs-tag"><<span class="hljs-name">Spell</span> 
+  <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Spell</span> 
     <span class="hljs-attr">:tmpl</span>=<span class="hljs-string">&quot;tmpl&quot;</span> 
     <span class="hljs-attr">:actions</span>=<span class="hljs-string">&quot;actions&quot;</span>
     <span class="hljs-attr">:idata</span>=<span class="hljs-string">&quot;idata&quot;</span>
     @<span class="hljs-attr">rerender</span>=<span class="hljs-string">&quot;onReRender&quot;</span>
-  /></span></span>
+  /&gt;</span></span>
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-color="black" style="--color:black;color:black;" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;./assets/flutter.png&quot;);background-size:contain;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="9" data-color="black" style="--color:black;color:black;" data-marpit-advanced-background="content"></section>
@@ -118,7 +118,7 @@
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-color="black" style="--color:black;color:black;">
 <p><a href="https://vitejs.dev/guide/api-plugin.html#virtual-modules-convention">https://vitejs.dev/guide/api-plugin.html#virtual-modules-convention</a></p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code>import(this.storybookUrl + 'virtual:/@storybook/builder-vite/storybook-stories.js')
-.then((exp) => {
+.then((exp) =&gt; {
 
 	this.importFn = exp.importFn
 
@@ -145,11 +145,11 @@
     <span class="hljs-attr">args</span>: {
       <span class="hljs-attr">title</span>: <span class="hljs-string">&quot;Ok&quot;</span>
     },
-    <span class="hljs-attr">render</span>: <span class="hljs-function">(<span class="hljs-params">args</span>) =></span> {
+    <span class="hljs-attr">render</span>: <span class="hljs-function">(<span class="hljs-params">args</span>) =&gt;</span> {
       <span class="hljs-keyword">const</span> component = { <span class="hljs-attr">methods</span>: {} };
       <span class="hljs-keyword">const</span> title = args.<span class="hljs-property">title</span>.<span class="hljs-title function_">charAt</span>(<span class="hljs-number">0</span>).<span class="hljs-title function_">toUpperCase</span>() + args.<span class="hljs-property">title</span>.<span class="hljs-title function_">slice</span>(<span class="hljs-number">1</span>);
       component.<span class="hljs-property">methods</span>[<span class="hljs-string">`onClick<span class="hljs-subst">${args.title}</span>`</span>] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Function</span>(<span class="hljs-string">`alert(&quot;<span class="hljs-subst">${title}</span>&quot;);`</span>);
-      component.<span class="hljs-property">template</span> = <span class="hljs-string">`<VBtn @click=&quot;onClick<span class="hljs-subst">${args.title}</span>&quot;><span class="hljs-subst">${title}</span></VBtn>`</span>;
+      component.<span class="hljs-property">template</span> = <span class="hljs-string">`&lt;VBtn @click=&quot;onClick<span class="hljs-subst">${args.title}</span>&quot;&gt;<span class="hljs-subst">${title}</span>&lt;/VBtn&gt;`</span>;
 
       <span class="hljs-keyword">return</span> component;
     }
